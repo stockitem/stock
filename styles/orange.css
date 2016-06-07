@@ -1,0 +1,11 @@
+.wrap .calendarleft .calendarhead { background-position:0 -150px;}
+.wrap .calendarleft .calendarhead .dateselect #monthdecrease:hover { background-position:-510px -104px;}
+.wrap .calendarleft .calendarhead .dateselect #monthincrease:hover { background-position:-533px -104px;}
+.wrap .calendarleft .calendarhead .today a:hover { background-position:-427px -104px;}
+.wrap .calendarright .huanglitoday { background-image:url(../Images/today_orange.png);}
+.wrap .calendarright .huangli { background-color:#fef5e8;}
+.wrap .calendarright .huangli .title { color:#d48200;}
+.wrap .calendarright .huangli .bigday { color:#d48200;}
+.wrap .calendarright .huangli .lunardate, .wrap .calendarright .huangli .ganzhidate { color: #d48200; }
+.Infobottom .top { background-color:#EA8831;}
+.Infobottom .content { background-color:#FEF5E8;}

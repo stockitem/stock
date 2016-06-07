@@ -1,0 +1,20 @@
+/*css digg style pagination  #F16000  #0E90D2  #FF6900 橘黄色 */
+
+.digg {
+	padding-right: 3px; padding-left: 3px; padding-bottom: 3px; margin: 3px; padding-top: 3px; text-align: center; font-size:12px;
+}
+.digg a {
+	border: #797979 1px solid; padding-right: 5px;  padding-left: 5px; padding-bottom: 2px; margin: 2px;color: #797979; padding-top: 2px; text-decoration: none
+}
+.digg a:hover {
+	border: #428BCA 1px solid;  color: #000; 
+}
+.digg a:active {
+	border: #428BCA 1px solid;  color: #000; 
+}
+.digg span.current {
+	border: #428BCA 1px solid; padding-right: 5px;  padding-left: 5px; font-weight: bold; padding-bottom: 2px; margin: 2px;color: #fff; padding-top: 2px;background-color: #428BCA
+}
+.digg span.disabled {
+	border-right: #eee 1px solid; padding-right: 5px; border-top: #eee 1px solid; padding-left: 5px; padding-bottom: 2px; margin: 2px; border-left: #eee 1px solid; color: #ddd; padding-top: 2px; border-bottom: #eee 1px solid
+}

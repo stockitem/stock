@@ -1,0 +1,806 @@
+@CHARSET "UTF-8";
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+	line-height: 100%;
+	font-family: "微软雅黑", "宋体";
+}
+
+body {
+	text-shadow: 0px 0px 1px rgb(204, 204, 204);
+	word-break: break-all;
+	-moz-user-select: none; /*火狐*/
+	-webkit-user-select: none; /*webkit浏览器*/
+	-ms-user-select: none; /*IE10*/
+	-khtml-user-select: none; /*早期浏览器*/
+	user-select: none;
+}
+
+a:focus {
+	outline-style: none;
+	-moz-outline-style: none;
+}
+
+.wrap {
+	width: 883px;
+	height: 488px;
+	margin: 50px auto;
+}
+
+.wrap .calendarleft {
+	width: 654px;
+	float: left;
+	margin-right: 13px;
+}
+
+.wrap .calendarright {
+	width: 216px;
+	float: left;
+}
+
+.wrap .calendarleft .calendarhead {
+	background-position: 0 -150px;
+}
+
+.wrap .calendarleft .calendarhead {
+	height: 26px;
+	padding: 11px 14px 13px 18px;
+	position: relative;
+	/*background-image: url(../Images/bg_calendartitle.png);*/
+	background-color: #30A7A3;
+	z-index: 99;
+}
+
+.wrap .calendarleft .calendarmain {
+	height: 424px;
+	margin-top: 14px;
+}
+
+.wrap .calendarleft .calendarhead .colorpicker {
+	width: 20px;
+	height: 20px;
+	margin-top: 4px;
+	float: left;
+}
+
+.wrap .calendarleft .calendarhead .time {
+	width: 160px;
+	height: 26px;
+	line-height: 26px;
+	font-size: 18px;
+	float: left;
+	color: #FFF;
+	margin-left: 21px;
+}
+
+.wrap .calendarleft .calendarhead .dateselect {
+	width: 194px;
+	height: 26px;
+	float: left;
+}
+
+.wrap .calendarleft .calendarhead .holiday {
+	width: 95px;
+	height: 26px;
+	float: left;
+	margin-left: 7px;
+}
+
+.wrap .calendarleft .calendarhead #festivallist {
+	position: absolute;
+	left: 420px;
+	top: 37px;
+	width: 93px;
+	height: 154px;
+}
+
+.dropdownlist {
+	border-left: 1px solid #999;
+	border-right: 1px solid #D8D8D8;
+	border-bottom: 1px solid #999;
+	background-color: #FFF;
+	border-top: none;
+	z-index: 999;
+	padding-top: 3px;
+}
+
+.wrap .calendarleft .calendarhead .today {
+	width: 82px;
+	height: 26px;
+	float: left;
+	margin-left: 9px;
+}
+
+.wrap .calendarleft .calendarhead .colorpicker a {
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-position: -561px -3px;
+}
+
+.wrap .calendarleft .calendarhead .colorpicker a,.wrap .calendarleft .calendarhead .colorpanel,.wrap .calendarleft .calendarhead .dateselect #yeardrop,.wrap .calendarleft .calendarhead .dateselect #monthdecrease,.wrap .calendarleft .calendarhead .dateselect #monthdrop,.wrap .calendarleft .calendarhead .dateselect #monthincrease,.wrap .calendarleft .calendarhead .holiday #holidaydrop,.wrap .calendarleft .calendarhead .today a,.wrap .calendarright .download .windows a,.wrap .calendarright .download .android a
+	{
+	background-image: url(../Images/image.png);
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+.wrap .calendarleft .calendarhead .colorpanel li {
+	width: 14px;
+	height: 14px;
+	margin-left: 2px;
+	cursor: pointer;
+	float: left;
+}
+
+.wrap .calendarleft .calendarhead .dateselect .yearselect {
+	float: left;
+}
+
+.wrap .calendarleft .calendarhead .dateselect #yeardrop {
+	display: block;
+	width: 74px;
+	height: 26px;
+	background-position: -573px -54px;
+	line-height: 26px;
+	font-size: 14px;
+	padding-left: 6px;
+}
+
+.dropdownlist li {
+	height: 22px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 22px;
+	cursor: pointer;
+}
+
+.wrap .calendarleft .calendarhead .dateselect #monthdecrease {
+	display: block;
+	width: 23px;
+	height: 26px;
+	background-position: -510px 0;
+	float: left;
+}
+
+.wrap .calendarleft .calendarhead .holiday #holidaydrop {
+	display: block;
+	float: left;
+	width: 70px;
+	height: 26px;
+	background-position: -558px -26px;
+	line-height: 26px;
+	font-size: 14px;
+	text-align: center;
+	padding-right: 25px;
+}
+
+.dropdownlist li {
+	height: 22px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 22px;
+	cursor: pointer;
+}
+
+.wrap .calendarleft .calendarhead .today a {
+	display: block;
+	background-position: -427px 0;
+	font-size: 13px;
+	line-height: 26px;
+	text-align: center;
+}
+
+.wrap .calendarleft .calendarmain .calendarweek ul {
+	border-right: 1px solid #CCC;
+	width: 651px;
+}
+
+.wrap .calendarleft .calendarmain .calendarweek ul li.first {
+	width: 110px;
+}
+
+.wrap .calendarleft .calendarmain .calendarweek ul li {
+	float: left;
+	width: 89px;
+	height: 45px;
+	font-size: 14px;
+	color: #252525;
+	line-height: 45px;
+	text-align: center;
+	border-left: 1px solid #CCC;
+	border-top: 1px solid #CCC;
+	background-color: #F2F8FD;
+}
+
+.wrap .calendarleft .calendarmain .calendarweeknum {
+	float: left;
+	width: 20px;
+	border-bottom: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+}
+
+.wrap .calendarleft .calendarmain .calendarweeknum ul.fiverow li {
+	height: 54px;
+	padding-top: 24px;
+}
+
+.wrap .calendarleft .calendarmain .calendarweeknum li {
+	border-top: 1px solid #CCC;
+	text-align: center;
+	color: #A0A0A0;
+	vertical-align: bottom;
+}
+
+.wrap .calendarleft .calendarmain .calendarweeknum li {
+	text-align: center;
+	color: #A0A0A0;
+}
+
+.wrap .calendarleft .calendarmain .calendarcontent {
+	float: left;
+}
+
+.wrap .calendarleft .calendarmain .calendarcontent ul {
+	width: 630px;
+	border-bottom: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+}
+
+.wrap .calendarleft .calendarmain .calendarcontent ul.fiverow li {
+	height: 78px;
+}
+
+.wrap .calendarleft .calendarmain .calendarcontent li {
+	width: 89px;
+	border-top: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	float: left;
+	cursor: pointer;
+	position: relative;
+}
+
+.wrap .calendarleft .calendarmain .calendarcontent li.othermonth .daywrap
+	{
+	filter: alpha(opacity = 40);
+	-moz-opacity: 0.4;
+	opacity: 0.4;
+}
+
+.bgtoday{
+	background-color: #F8D0AB;
+}
+
+.wrap .calendarleft .calendarmain .calendarcontent li .daywrap {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.wrap .calendarleft .calendarmain .calendarcontent li.weekend .daywrap .solarday
+	{
+	color: #D98438;
+}
+
+.wrap .calendarleft .calendarmain .calendarcontent li .daywrap .solarday
+	{
+	font-size: 24px;
+	color: #1F80A9;
+	margin-top: 16px;
+}
+
+.wrap .calendarleft .calendarmain .calendarcontent li .daywrap .lunarday
+	{
+	font-size: 13px;
+	color: #8C8C8C;
+	margin-top: 6px;
+}
+
+.wrap .calendarleft .calendarmain .calendarcontent li .select {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.wrap .calendarleft .calendarmain .calendarcontent ul.fiverow li {
+	height: 78px;
+}
+
+.wrap .calendarright .huangli {
+	background-color: #FEF5E8;
+}
+
+.wrap .calendarright .huanglitoday {
+	background-image: url(../Images/today_orange.png);
+}
+
+.wrap .calendarright .huangli {
+	height: 291px;
+	background-color: #E6F4FC;
+	overflow: hidden;
+	text-align: center;
+	background-repeat: no-repeat;
+}
+
+.wrap .calendarright .huangli .title {
+	color: #D48200;
+}
+
+.wrap .calendarright .huangli .title {
+	font-size: 18px;
+	margin-top: 16px;
+}
+
+.wrap .calendarright .huangli .date {
+	margin-top: 12px;
+	color: #000;
+	font-size: 15px;
+}
+
+.wrap .calendarright .huangli .bigday {
+	color: #D48200;
+}
+
+.wrap .calendarright .huangli .bigday {
+	margin-top: 4px;
+	font-size: 110px;
+}
+
+.wrap .calendarright .huangli .lunardate,.wrap .calendarright .huangli .ganzhidate
+	{
+	color: #D48200;
+}
+
+.wrap .calendarright .huangli .lunardate,.wrap .calendarright .huangli .ganzhidate
+	{
+	height: 24px;
+	line-height: 24px;
+	font-size: 13px;
+}
+
+.wrap .calendarright .huangli .lunardate,.wrap .calendarright .huangli .ganzhidate
+	{
+	color: #D48200;
+}
+
+.wrap .calendarright .huangli .lunardate,.wrap .calendarright .huangli .ganzhidate
+	{
+	height: 24px;
+	line-height: 24px;
+	font-size: 13px;
+}
+
+.wrap .calendarright .huangli .split {
+	height: 1px;
+	width: 194px;
+	margin: 4px auto;
+	background-image: url(../Images/line.png);
+	font-size: 0;
+}
+
+.wrap .calendarright .huangli {
+	text-align: center;
+}
+
+.wrap .calendarright .huangli .yi {
+	background-image: url(../Images/yi.png);
+	background-repeat: no-repeat;
+	background-position: 20px;
+}
+
+.wrap .calendarright .huangli .yi,.wrap .calendarright .huangli .ji {
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+	text-align: left;
+	padding-left: 48px;
+}
+
+.wrap .calendarright .huangli .ji {
+	background-image: url(../Images/ji.png);
+	background-repeat: no-repeat;
+	background-position: 20px;
+}
+
+.wrap .calendarright .huangli .yi,.wrap .calendarright .huangli .ji {
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+	text-align: left;
+	padding-left: 48px;
+}
+
+.Infobottom {
+	width: 216px;
+	margin-top: 12px;
+}
+
+.Infobottom .top {
+	background-color: #EA8831;
+}
+
+.Infobottom .top {
+	height: 30px;
+	width: 100%;
+	font-size: 12px;
+	color: #FFF;
+	overflow: hidden;
+}
+
+.Infobottom .content {
+	background-color: #FEF5E8;
+}
+
+.Infobottom .content {
+	height: 40px;
+	padding-top: 6px;
+}
+
+.Infobottom .top .title {
+	float: left;
+}
+
+.Infobottom .top span {
+	display: inline;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+
+.Infobottom .top .change {
+	margin: 0 7px;
+	cursor: pointer;
+}
+
+.Infobottom .top .city,.Infobottom .top .change {
+	float: right;
+}
+
+.Infobottom .top span {
+	display: inline;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+
+.Infobottom .top .city {
+	margin-left: 8px;
+}
+
+.Infobottom .content {
+	background-color: #FEF5E8;
+}
+
+.Infobottom .content {
+	height: 40px;
+	padding-top: 6px;
+}
+
+.Infobottom .content div {
+	line-height: 18px;
+	font-size: 12px;
+	color: #5A5A5B;
+	padding-left: 10px;
+}
+
+.wrap .calendarright .download {
+	height: 110px;
+	margin-top: 13px;
+}
+
+.wrap .calendarright .download div {
+	width: 213px;
+	height: 50px;
+	margin: 0 auto;
+}
+
+.wrap .calendarright .download .windows a {
+	background-position: 0 0;
+	display: block;
+	height: 50px;
+}
+
+.wrap .calendarright .download .android a {
+	background-position: 0 -50px;
+	margin-top: 10px;
+	display: block;
+	height: 50px;
+}
+
+.wrap .calendarleft .calendarhead .dateselect #monthdrop {
+	display: block;
+	float: left;
+	width: 48px;
+	height: 26px;
+	background-position: -592px -82px;
+	line-height: 26px;
+	font-size: 14px;
+	padding-left: 13px;
+}
+
+.wrap .calendarright .download .android a:hover {
+	background-position: -213px -50px;
+}
+
+.wrap .calendarright .download .windows a:hover {
+	background-position: -213px 0;
+}
+
+.wrap .calendarleft .calendarhead .today a:hover {
+	background-position: -427px -104px;
+}
+
+.wrap .calendarleft .calendarhead .dateselect #monthdecrease:hover {
+	background-position: -510px -104px;
+}
+
+.wrap .calendarleft .calendarhead .dateselect #monthincrease:hover {
+	background-position: -533px -104px;
+}
+
+.wrap .calendarleft .calendarhead .dateselect #monthincrease {
+	display: block;
+	width: 23px;
+	height: 26px;
+	background-position: -533px 0;
+	float: left;
+}
+
+.footerfloat {
+	height: 136px;
+	background-color: #F7F7F7;
+	width: 100%;
+	text-align: center;
+	display: none;
+}
+
+.footcenter {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 25px;
+	color: #8A8A8A;
+	font-size: 14px;
+	line-height: 30px;
+}
+
+.footcenter a {
+	color: #8A8A8A;
+	text-decoration: none;
+}
+
+.footcenter a:hover {
+	text-decoration: underline;
+}
+
+.demo {
+	display: none;
+	position: absolute;
+	z-index: 500;
+	font: "Microsoft Yahei";
+	color: #999;
+}
+
+.cityinput {
+	border: 2px solid #FFF;
+	background-color: #F6F6F6;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	height: 22px;
+	line-height: 22px;
+	width: 144px;
+	margin-left: 3px;
+	padding-left: 6px;
+	font-size: 12px;
+	color: #666;
+	outline: none;
+	_margin-top: -10px;
+}
+
+.wrap .calendarleft .calendarhead .dateselect #yearlist {
+	position: absolute;
+	left: 219px;
+	top: 37px;
+	width: 78px;
+	height: 180px;
+	overflow-y: scroll;
+}
+
+.dropdownlist li {
+	height: 22px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 22px;
+	cursor: pointer;
+}
+
+.wrap .calendarleft .calendarhead .dateselect #monthlist {
+	position: absolute;
+	left: 327px;
+	top: 37px;
+	width: 61px;
+	height: 264px;
+}
+
+.dropdownlist {
+	border-left: 1px solid #999;
+	border-right: 1px solid #D8D8D8;
+	border-bottom: 1px solid #999;
+	background-color: #FFF;
+	border-top: none;
+	z-index: 999;
+	padding-top: 3px;
+}
+
+.dropdownlist li {
+	height: 22px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 22px;
+	cursor: pointer;
+}
+
+.citySelector {
+	font: 12px/1.5 arial;
+	background: #FFF;
+	text-align: left;
+	border-bottom: 1px solid #E5E5E5;
+	box-shadow: 2px 2px 3px #E5E5E5;
+	_margin-top: -5px;
+}
+
+.hide {
+	display: none;
+}
+
+.cityBox {
+	width: 293px;
+	height: 169px;
+	margin-top: 4px;
+	color: #666;
+	border-bottom: 2px solid #FFF;
+	overflow: hidden;
+	padding: 0 1px 2px 1px;
+	background-color: #FFF;
+}
+
+p.tip {
+	color: #666;
+	line-height: 20px;
+	padding: 5px;
+	margin: 0;
+	text-indent: 3px;
+}
+
+.cityBox ul {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	margin-bottom: -4px;
+}
+
+.cityBox ul li {
+	float: left;
+	list-style: none;
+	padding: 2px 3px 2px 4px;
+	cursor: pointer;
+	margin-right: 35px;
+	margin-left: 3px;
+	display: inline;
+	font-size: 14px;
+	font-weight: bolder;
+	color: #666;
+	font-family: "Microsoft Yahei";
+}
+
+.hotCity {
+	height: 110px;
+	margin-top: -1px;
+	clear: left;
+	overflow: auto;
+	padding-bottom: 5px;
+	_margin-bottom: 8px;
+}
+
+.cityTab {
+	overflow: hidden;
+}
+
+.cityTab dl {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.cityTab dl dt {
+	float: left;
+	padding-left: 3px;
+	color: #F30;
+	text-indent: 5px;
+	font-family: "Lucida console", "consolas", "courier new";
+	line-height: 22px;
+	font-size: 14px;
+	width: 20px;
+}
+
+.cityTab dl dd {
+	margin-left: 2px;
+	float: left;
+	width: 290px;
+}
+
+.cityTab dl dd a {
+	padding-left: 8px;
+	width: 62px;
+	line-height: 22px;
+	display: inline-block;
+	text-decoration: none;
+	color: #999;
+}
+
+.wrap .calendarleft .calendarmain .calendarweeknum {
+	float: left;
+	width: 20px;
+	border-bottom: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+}
+
+.wrap .calendarleft .calendarmain .calendarweeknum ul.fiverow li {
+	height: 54px;
+	padding-top: 24px;
+}
+
+.wrap .calendarleft .calendarmain .calendarweeknum ul.sixrow li {
+	height: 49px;
+	padding-top: 16px;
+}
+
+.wrap .calendarleft .calendarmain .calendarcontent ul.sixrow li {
+	height: 65px;
+}
+
+.wrap .calendarleft .calendarmain .calendarweeknum li {
+	border-top: 1px solid #CCC;
+	text-align: center;
+	color: #A0A0A0;
+	vertical-align: bottom;
+}
+
+.wrap .calendarleft .calendarhead .colorpanel {
+	width: 66px;
+	height: 14px;
+	background-position: -582px -3px;
+	position: absolute;
+	top: 15px;
+	left: 39px;
+	display: none;
+	z-index: 999;
+	padding: 3px 1px;
+}
+
+.wrap .calendarleft .calendarhead .colorpanel li {
+	width: 14px;
+	height: 14px;
+	margin-left: 2px;
+	cursor: pointer;
+	float: left;
+}
